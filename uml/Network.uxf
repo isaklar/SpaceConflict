@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>904</x>
+      <y>536</y>
+      <w>168</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Network::InputSender
+--
+- ipAddr : InetAddress
+--
++«constructor»InputSender(String ipAddr)
++«constructor»InputHandler()
++sendAction(int action) : void
+--
+Responsibilities
+
+Sends UDP message with
+user input to the Host game.
+
+Observes InputHandler
+perhaps?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>536</y>
+      <w>352</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Network::StateSender
+--
++«constructor»StateSender()
++sendState(List&lt;PhysObject&gt; objectList) : synchronized void
+--
+Responsibilities
+
+Broadcats UDP message with
+the data Guest games requires.
+
+Read only access to the Space
+and sends periodically perhaps?
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>600</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>592</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Model::Space</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>688</y>
+      <w>24</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>928</x>
+      <y>832</y>
+      <w>128</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Model::InputHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>296</y>
+      <w>176</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Network::MessageReceiver
+--
+- BUFF_SIZE : int = 4096
+- messList : MessList
+--
++«constructor»MessageReceiver(MessList messList)
++listen() : void
++listenMulticast() : void
+--
+Responsibilities
+
+Handles and prepare received
+UDP messages for the model.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>392</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>384</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Model::StateLoader</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>312</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>Model::InputHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>320</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>808</y>
+      <w>256</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Observer
+-
++update(Observable obs, Object arg) : void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>680</y>
+      <w>24</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>688</y>
+      <w>176</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;40.0;120.0;40.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1064</x>
+      <y>344</y>
+      <w>136</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;340.0;10.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>344</y>
+      <w>720</w>
+      <h>608</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>880.0;10.0;880.0;740.0;10.0;740.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>232</y>
+      <w>624</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>760.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>536</y>
+      <w>176</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Network::MessBox
+--
+- list : LinkedList&lt;Message&gt;
+--
++«constructor»MessList()
++add(Message message) : void
+--
+Responsibilities
+
+Lägger till Message i listan och
+skickar vidare via observers
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>784</y>
+      <w>176</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Observable
+--
++addObserver(Observer o) : void
+#clearChanged() : void
++countObservers() : int
++deleteObserver(Observer o) : void
++deleteObservers() : void
++hasChanged() : boolean
++notifyObservers() : void
++notifyObservers(Object arg) : void
+#setChanged() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>696</y>
+      <w>144</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;110.0;160.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1096</x>
+      <y>144</y>
+      <w>264</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+NetConsts
+-
+//IP constants
++ LISTEN_PORT : int = 1234
++ LISTEN_HOST : int = 1337
++ LISTEN_GUEST : int = 9001
++ MULTICAST_ADDR : String = "224.0.0.123"
+
+//Message type codes
++ MESS_ACTION : int = 0
++ MESS_STATE : int = 1
+
+//Object type codes used i the messages
++ POBJ_SHIP : int = 0
++ POBJ_WEAP : int = 1
++ POBJ_CBOD : int = 2
++ POBJ_GRAV : int = 3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>296</y>
+      <w>176</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Network::Message
+--
++ sender : InetAddress
++ content : ByteBuffer
+--
++«constructor»Message(InetAddress address, ByteBUffer content)
+--
+Responsibilities
+
+Själva meddelandet.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>368</y>
+      <w>520</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>630.0;10.0;560.0;10.0;560.0;160.0;10.0;160.0;10.0;200.0</additional_attributes>
+  </element>
+</diagram>

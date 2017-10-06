@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1384</x>
+      <y>64</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Model::Geometry
+--
+
+--
+--
+Responsibilities
+
+Superclass for more specific
+geometries.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1256</x>
+      <y>256</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::Circle
+--
+-radious : float
+--
++Circle(float radious) : ctor
++setRadious(float radious)
++getRadious() : float
+--
+Responsibilities
+
+Keeps track of the radius of
+a circle.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1528</x>
+      <y>256</y>
+      <w>168</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Model::Rectangle
+--
+- height : float
+- width : float
+--
+Rectangle(float height, float width) : ctor
+getWidth() : float
+getHeight() : float
+setWidht(float width)
+setHeight(float height)
+--
+Responsibilities
+
+Keeps track of width and height
+of a rectangle.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>208</y>
+      <w>152</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>208</y>
+      <w>120</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>480</y>
+      <w>304</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Model::MoveObject
+--
+-maxSpeed : float
+-speed : float
+-course : float
+--
++MoveObject(float XPos, float YPos, Geometry geometry, float maxSpeed, float speed, float course):ctor
++getSpeed() : float
++getCourse() : float
++setSpeed(float speed)
++setCours(float course)
++gravitate(float xPos, float yPos, float celBodMass) : void
+- calcCourse(float xSpeed, float ySpeed) : float
+
+--
+Responsibilities
+
+Keeps track of information
+common to moving physObjects:
+speed, course and
+maxSpeed (maxSpeed should
+perhaps be in Spaceship
+instead).</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>328</y>
+      <w>24</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>544</x>
+      <y>360</y>
+      <w>232</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Model::Space
+--
+-objects : arrayList&lt;PhysObject&gt;
+-height : int
+-width : int
+--
++Space(int height, int widht) : ctor
++getWidht() : int
++getHeight() : int
++addObj(PhysObject obj)
++removeObj(int id);
++getObjects() : List
+
+--
+Responsibilities
+
+Keeps track of the PhysObjects
+in a list and makes available
+necessary information for the
+View</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>120</y>
+      <w>320</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;300.0;10.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>800</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::Player
+--
+--
+--
+Responsibilities
+
+Keeps track of player
+information necessary in the
+model: lives left, some form
+of ID, time of last death</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>800</y>
+      <w>168</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Model::Spaceship
+--
+- orientation : float
+- owner : Player
+--
++Spaceship(float xPos, float yPos, float orientation, Player owner):ctor
++Spaceship(float xPos, float yPos, float orientation, int explodeTimeLeft):ctor
++ getOrientation()
++ setOrientation(float orientation);
+--
+Responsibilities
+
+Keeps track of information
+particular to Spaceships:
+orientation and owner</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>760</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>800</y>
+      <w>168</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Model::WeaponProj
+--
+-timeToLive : int //gameticks
+--
++WeaponProj(float XPos, float YPos, float maxSpeed, float speed, float cours, int timeToLive):ctor
++WeaponProj(float xPos, float yPos, float speed, float course):ctor
++getTimeLeft() : int
++setDestroyed() : void
++isDestroyed() : bolean
++decTimeLeft() : void
+--
+Responsibilities
+
+Keeps track of information
+particular to weapon projectiles:
+time to live
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>760</y>
+      <w>120</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>520</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::MoveHandler
+--
+--
+--
+Responsibilities
+
+Moves the physObjects
+in the Space
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>696</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::DetectionHandler
+--
+--
+--
+Responsibilities
+
+Detects and handles collisions
+between PhysObject in
+the Space.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>352</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::GuestGame
+--
+--
+--
+Responsibilities
+
+Loads the Space with state
+information received from
+Network - used when the game
+is run in guest mode.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>144</y>
+      <w>224</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>520</y>
+      <w>168</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>Model::HostGame
+--
+-tickLenght : int //uppdate frequency in ms
+-players : arrayList&lt;Player&gt;
+-maxPlayers : int
+-space : Space
+-moveHandler : MoveHandler
+-detectionHandler : DetectionHandler
+--
+HostGame(int tickLenght, int maxPlayers)
++run()
+
+--
+Responsibilities
+
+Runs a thread of the game in
+host mode, which means that
+it actively computes and
+updates the game model.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>352</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::StateLoader
+--
+--
+--
+Responsibilities
+
+Passively updates the game
+model based on data received
+from Network.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>544</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::CelestBody
+--
+-gravity : Gravity
+--
++CelestBody(float XPos, float YPos, Geometry geometry, float gravity) : ctor
++getGravity() : Gravity
+-createGravity(int id, float XPos, float YPos, Geometry geometry, float gravity) : Gravity
+--
+Responsibilities
+
+Keeps track of celestial bodies.
+A celestial body always have a
+Gravity.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1528</x>
+      <y>504</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::Gravity
+--
+- gravityStrength : float
+--
++Gravity(float XPos, float YPos, Geometry geometry, float gravity) : ctor
++getGravity() : float
++setGravity(float strength)
+--
+Responsibilities
+
+Keeps track of a gravity field.
+Collision with gravity is different
+from other types of collision.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>328</y>
+      <w>384</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;270.0;460.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>328</y>
+      <w>600</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;220.0;730.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>424</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>456</y>
+      <w>72</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;50.0;170.0;50.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>424</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>272</y>
+      <w>472</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>570.0;110.0;570.0;20.0;10.0;20.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>272</y>
+      <w>592</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>720.0;110.0;720.0;20.0;10.0;20.0;10.0;410.0;70.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>272</y>
+      <w>592</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>720.0;110.0;720.0;20.0;10.0;20.0;10.0;630.0;70.0;630.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>648</y>
+      <w>288</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;180.0;340.0;180.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>872</y>
+      <w>320</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>744</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>640</y>
+      <w>128</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;210.0;60.0;210.0;60.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>216</x>
+      <y>584</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>64</y>
+      <w>272</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Model::PhysObject
+--
+-xPos : float
+-yPos : float
+-geometry : Geometry
+--
++PhysObject(float XPos, float YPos, Geometry geometry):ctor
++getXPos()
++getYPos()
++setXPos(float XPos)
++setYPos(float YPos)
+--
+Responsibilities
+
+Keeps track of common object
+information: position and
+geometry and perhaps also
+color and ID.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

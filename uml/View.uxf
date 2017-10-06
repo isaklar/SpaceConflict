@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>384</y>
+      <w>282</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>View::SpaceBoard
+--
+- readyToPaint : boolean
+- ObjectList : List&lt;PhysObject&gt;
+--
++«constructor»SpaceBoard()
++updateView(List&lt;PhystObject&gt; ObjectList) : synchronized void
++paintComponent(Graphics g)
+-drawObjects(Graphics g) throws IOException
+--
+Responsibilities
+
+Encapsulates the SpaceBoard.
+
+Not entirely sure if both
+SpaceFrame and SpaceBoard is
+necessary.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>534</y>
+      <w>144</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>View::GUI
+--
+- spaceFrame : JFrame
+- panelContainer : JPanel
+- spaceBoard : SpaceBoard
+- menu : JPanel
+- cl : CardLayout
+- button : JButton
+--
++ «constructor»GUI()
++ getSpaceFrame() : JFrame
+--
+Responsibilities
+
+Maintains and updates the GUI
+for the player in the Guest
+game.
+
+Updates periodically based on
+information from read only
+access to Space, perhaps?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>492</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>54</x>
+      <y>582</y>
+      <w>204</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>576</y>
+      <w>60</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>Model::Space</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>18</y>
+      <w>150</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+NetConst
+-
+//Space board dimensions
++ BOARD_WIDTH : int = 800
++ BOARD_HEIGHT : int = 600
+-
+//Number of lives
++ NUM_LIVES : int = 3
+-
+//Celestial body radius
++ CBODY_RADIUS : int = 70
+-
+//Gravityt radius
++ GRAV_RADIUS : int = 210
+-
+//Base gravity strength
++ GRAV_BASE_STR : int = 10
+-
+//Length of the game loop in ms
++ PERIOD : int = 10
+-
+//Weapon projectile constants
++ WPROJ_TTL : int 120
++ WPROJ_RADIUS : float = 3
++ WPROJ_BASE_SPEED : float = 4
+-
+//Spaceship dimensions
++ SHIP_RADIUS : int = 10
+-
+//Spaceships explode for this long
++ EXPLODE_TIME : int = 10
+-
+//Spaceship reload time
++ RELOAD_TIME : int = 50
+-
+//Spaceship action constants
++ ACCELERATION : float = 0.03
++ ORIENT_RATE : float = 0.03
++ MAX_SPEED : float = 2.0
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>228</y>
+      <w>18</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>102</y>
+      <w>192</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Observer
+-
++update(Observable obs, Object arg) : void
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>138</y>
+      <w>162</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;700.0;250.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>486</x>
+      <y>60</y>
+      <w>144</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>JPanel
+--
++ getSpaceFrame() : JFrame
++ getAccessibleContext() : AccessibleContext
++ getUI() : PanelUI
++ getUIClassID() : String
+# paramString() : String
++ setUI(PanelUI ui) : void
++ 	updateUI() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>144</y>
+      <w>102</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;320.0;10.0;320.0;10.0;400.0</additional_attributes>
+  </element>
+</diagram>

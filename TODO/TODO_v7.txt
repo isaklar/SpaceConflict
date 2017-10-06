@@ -1,0 +1,7 @@
+TODO v.6-7
+Magnus	-- Elementär nätverkslösning, fortsättning med UML
+Isak	-- InputHandler
+Gabriel -- Git administeration, elementär GUI implementation / spelplansobject , fortsätt med UML
+Erik 	-- elementär GUI implementation / spelplansobject
+Max	-- påbörja CollisionDetection, kolla upp intersectmetoder för cirklar och rektanglar
+

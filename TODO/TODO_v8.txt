@@ -1,0 +1,5 @@
+Isak -- spellogik regler, design, vad händer om dit skepp förstörs osv... flödes schema och uml för det
+Magnus -- nätverk, host och client spellopar
+Max -- göra klart kolissionsdetektering
+Erik -- gör klart GUI för spelplan
+Gabriel -- samma som Erik

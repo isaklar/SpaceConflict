@@ -1,0 +1,7 @@
+Magnus - collision tillsamans med Isak och erik spellogik, spelomgångslogik
+Erik - collision 
+Isak - collision, Menyer
+
+Gabreil - Menyer, lobby med Magnus
+Max - dockumentation
+
